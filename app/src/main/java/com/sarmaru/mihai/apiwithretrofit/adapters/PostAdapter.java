@@ -31,7 +31,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
         Post currentPost = postsList.get(position);
         holder.textViewTitle.setText(currentPost.getPostTitle());
         holder.textViewContent.setText(currentPost.getPostContent());
-        holder.textViewUser.setText(currentPost.getUserID());
     }
 
     @Override
@@ -48,14 +47,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
 
         private TextView textViewTitle;
         private TextView textViewContent;
-        private TextView textViewUser;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
 
             textViewTitle = itemView.findViewById(R.id.textView_post_title);
             textViewContent = itemView.findViewById(R.id.text_view_content);
-            textViewUser = itemView.findViewById(R.id.text_view_username);
         }
     }
 
