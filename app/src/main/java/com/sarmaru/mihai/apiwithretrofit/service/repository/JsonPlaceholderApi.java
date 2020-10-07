@@ -1,6 +1,6 @@
-package com.sarmaru.mihai.apiwithretrofit.apis;
+package com.sarmaru.mihai.apiwithretrofit.service.repository;
 
-import com.sarmaru.mihai.apiwithretrofit.models.Post;
+import com.sarmaru.mihai.apiwithretrofit.service.model.Post;
 
 import java.util.List;
 

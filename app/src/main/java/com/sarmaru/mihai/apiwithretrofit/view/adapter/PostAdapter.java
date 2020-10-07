@@ -1,4 +1,4 @@
-package com.sarmaru.mihai.apiwithretrofit.adapters;
+package com.sarmaru.mihai.apiwithretrofit.view.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sarmaru.mihai.apiwithretrofit.R;
-import com.sarmaru.mihai.apiwithretrofit.models.Post;
+import com.sarmaru.mihai.apiwithretrofit.service.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;

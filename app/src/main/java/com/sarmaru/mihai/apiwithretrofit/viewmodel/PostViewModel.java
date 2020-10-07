@@ -1,4 +1,4 @@
-package com.sarmaru.mihai.apiwithretrofit.viewmodels;
+package com.sarmaru.mihai.apiwithretrofit.viewmodel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.sarmaru.mihai.apiwithretrofit.models.Post;
-import com.sarmaru.mihai.apiwithretrofit.models.PostRepository;
+import com.sarmaru.mihai.apiwithretrofit.service.model.Post;
+import com.sarmaru.mihai.apiwithretrofit.service.repository.PostRepository;
 
 import java.util.List;
 

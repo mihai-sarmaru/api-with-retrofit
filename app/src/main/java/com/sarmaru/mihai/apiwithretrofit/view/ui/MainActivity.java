@@ -1,4 +1,4 @@
-package com.sarmaru.mihai.apiwithretrofit;
+package com.sarmaru.mihai.apiwithretrofit.view.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.sarmaru.mihai.apiwithretrofit.adapters.PostAdapter;
-import com.sarmaru.mihai.apiwithretrofit.models.Post;
-import com.sarmaru.mihai.apiwithretrofit.viewmodels.PostViewModel;
+import com.sarmaru.mihai.apiwithretrofit.R;
+import com.sarmaru.mihai.apiwithretrofit.view.adapter.PostAdapter;
+import com.sarmaru.mihai.apiwithretrofit.service.model.Post;
+import com.sarmaru.mihai.apiwithretrofit.viewmodel.PostViewModel;
 
 import java.util.List;
 

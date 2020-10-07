@@ -1,4 +1,4 @@
-package com.sarmaru.mihai.apiwithretrofit.models;
+package com.sarmaru.mihai.apiwithretrofit.service.model;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,9 +1,9 @@
-package com.sarmaru.mihai.apiwithretrofit.models;
+package com.sarmaru.mihai.apiwithretrofit.service.repository;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.sarmaru.mihai.apiwithretrofit.apis.JsonPlaceholderApi;
+import com.sarmaru.mihai.apiwithretrofit.service.model.Post;
 
 import java.util.List;
 
