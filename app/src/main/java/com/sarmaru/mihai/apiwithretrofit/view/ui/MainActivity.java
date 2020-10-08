@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.sarmaru.mihai.apiwithretrofit.R;
@@ -31,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
 
         final PostAdapter postAdapter = new PostAdapter();
         recyclerView.setAdapter(postAdapter);
+
+        postAdapter.setOnItemClickListener(new PostAdapter.onItemClickListener() {
+            @Override
+            public void onClickListener(Post post) {
+
+                // Start UserActivity via intent with ID
+                Intent userIntent = new Intent(MainActivity.this, UserActivity.class);
+                userIntent.putExtra(UserActivity.EXTRA_ID, post.getUserID());
+                startActivity(userIntent);
+            }
+        });
 
         // Connect ViewModel to Activity
         postViewModel = new ViewModelProvider(this).get(PostViewModel.class);

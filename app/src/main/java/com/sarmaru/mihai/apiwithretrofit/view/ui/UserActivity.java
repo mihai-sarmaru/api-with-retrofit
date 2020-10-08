@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -12,6 +13,9 @@ import com.sarmaru.mihai.apiwithretrofit.service.model.User;
 import com.sarmaru.mihai.apiwithretrofit.viewmodel.UserViewModel;
 
 public class UserActivity extends AppCompatActivity {
+
+    public static final String EXTRA_ID = "com.sarmaru.mihai.apiwithretrofit.EXTRA_ID";
+    public static final int INVALID_ID = -1;
 
     private TextView textViewUserName;
     private TextView textViewUserUsername;
@@ -31,11 +35,11 @@ public class UserActivity extends AppCompatActivity {
 
         initActivityViews();
 
-        // TODO Get intent from clicked list item
-        int ID = 1;
+        Intent receivedIntent = getIntent();
+        int receivedUserID = receivedIntent.getIntExtra(EXTRA_ID, INVALID_ID);
 
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        userViewModel.getUserByID(ID).observe(this, new Observer<User>() {
+        userViewModel.getUserByID(receivedUserID).observe(this, new Observer<User>() {
             @Override
             public void onChanged(User user) {
                 updateTextViews(user);
