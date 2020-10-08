@@ -6,8 +6,10 @@ public class User {
 
     @SerializedName("id")
     private int userID;
-    @SerializedName("username")
+    @SerializedName("name")
     private String userName;
+    @SerializedName("username")
+    private String userUsername;
     @SerializedName("email")
     private String userEmail;
     @SerializedName("address")
@@ -25,6 +27,10 @@ public class User {
 
     public String getUserName() {
         return userName;
+    }
+
+    public String getUserUsername() {
+        return userUsername;
     }
 
     public String getUserEmail() {
