@@ -17,6 +17,7 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
 
     private List<Post> postsList = new ArrayList<>();
+    private onItemClickListener listener;
 
     @NonNull
     @Override
@@ -53,7 +54,24 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostHolder> {
 
             textViewTitle = itemView.findViewById(R.id.textView_post_title);
             textViewContent = itemView.findViewById(R.id.text_view_content);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.onClickListener(postsList.get(position));
+                    }
+                }
+            });
         }
     }
 
+    public interface onItemClickListener {
+        void onClickListener(Post post);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener) {
+        this.listener = listener;
+    }
 }
