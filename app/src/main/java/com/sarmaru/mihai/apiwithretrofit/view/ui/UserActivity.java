@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sarmaru.mihai.apiwithretrofit.R;
@@ -28,6 +30,8 @@ public class UserActivity extends AppCompatActivity {
     private TextView textViewUserCompanyCatchPhrase;
     private TextView textViewUserCompanyBS;
 
+    private RelativeLayout userLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,7 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onChanged(User user) {
                 updateTextViews(user);
+                setLayoutVisibility(View.VISIBLE);
             }
         });
     }
@@ -58,15 +63,22 @@ public class UserActivity extends AppCompatActivity {
         textViewUserCompanyName = findViewById(R.id.text_view_user_company_name);
         textViewUserCompanyCatchPhrase = findViewById(R.id.text_view_user_company_catch_phrase);
         textViewUserCompanyBS = findViewById(R.id.text_view_user_company_bs);
+        userLayout = findViewById(R.id.user_layout);
+
+        setLayoutVisibility(View.INVISIBLE);
+    }
+
+    private void setLayoutVisibility(int visibility) {
+        userLayout.setVisibility(visibility);
     }
 
     private void updateTextViews(User user) {
         textViewUserName.setText(user.getUserName());
-        textViewUserUsername.setText(user.getUserUsername());
-        textViewUserEmail.setText(user.getUserEmail());
-        textViewUserPhone.setText(user.getUserPhoneNumber());
-        textViewUserWebsite.setText(user.getUserWebsite());
-        textViewUserCity.setText(user.getUserAddress().getCityName());
+        textViewUserUsername.setText("(" + user.getUserUsername() + ")");
+        textViewUserEmail.setText("Email: " + user.getUserEmail());
+        textViewUserPhone.setText("Phone: " + user.getUserPhoneNumber());
+        textViewUserWebsite.setText("Website: " + user.getUserWebsite());
+        textViewUserCity.setText("City: " + user.getUserAddress().getCityName());
         textViewUserStreet.setText(user.getUserAddress().getStreetName() + ", "
                 + user.getUserAddress().getApartmentName() + ", "
                 + user.getUserAddress().getZipCode());
